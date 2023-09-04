@@ -1,4 +1,5 @@
 # Clock
+![digitalclock](https://github.com/NeginKashani/Clock/assets/109550062/9912576a-2d28-4dbf-bacf-e5aa001e2b08)
 
 - [Demo Project]()
 
