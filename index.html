@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: monospace;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            background-color: blueviolet;
+            color: rgb(34, 191, 146);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            width: 850px;
+            height: 220px;
+            /* border: 1px solid rgb(16, 16, 16); */
+            border-radius: 10px;
+
+        }
+
+        .clock {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(5, 5, 5);
+            box-shadow: 2px 5px 10px rgb(15, 219, 195),
+                -3px -4px 10px rgb(19, 201, 189), -4px -6px 10px rgb(17, 218, 34),
+                4px 6px 10px rgb(17, 218, 34);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .clock span {
+            width: 200px;
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 3px 3px 15px rgb(13, 13, 237);
+            /* border:1px solid red; */
+            margin-left: 15px;
+        }
+
+        @media screen and (max-width:768px) {
+            .box {
+                width: 470px;
+                height: 200px;
+            }
+
+            .clock span {
+                width: 100px;
+                font-size: 40px;
+            }
+
+            .clock h6 {
+                width: 25px;
+                font-size: 16px;
+                padding-left: -20px;
+                /* border:1px solid red; */
+            }
+        }
+
+        .clock h6 {
+            width: 30%;
+            font-size: 20px;
+            margin-right: 10px;
+            /* border: 1px solid red; */
+            margin: 2px -40px 2px 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <div class="clock">
+                <span id="hours">00</span>
+                <h6>HRS</h6>
+                <span>:</span>
+                <span id="minutes">00</span>
+                <h6>MIN</h6>
+                <span>:</span>
+                <span id="seconds">00</span>
+                <h6>SEC</h6>
+            </div>
+        </div>
+    </main>
+    <script>
+        let _hours = document.getElementById('hours')
+        let _minutes = document.getElementById('minutes')
+        let _seconds = document.getElementById('seconds')
+        setInterval(() => {
+            let digitalclock = new Date()
+
+            if ((digitalclock.getHours()) < 10) {
+                _hours.innerHTML = '0' + (digitalclock.getHours());
+            } else {
+                _hours.innerHTML = (digitalclock.getHours());
+            }
+
+            if ((digitalclock.getMinutes()) < 10) {
+                _minutes.innerHTML = '0' + (digitalclock.getMinutes());
+            } else {
+                _minutes.innerHTML = (digitalclock.getMinutes());
+            }
+            if ((digitalclock.getSeconds()) < 10) {
+                _seconds.innerHTML = '0' + (digitalclock.getSeconds());
+            } else {
+                _seconds.innerHTML = (digitalclock.getSeconds());
+            }
+
+        }, 40);
+
+    </script>
+
+</body>
+
+</html>
